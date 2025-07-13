@@ -1,0 +1,26 @@
+{
+  "name": "vince-dev-tools",
+  "version": "1.0.0",
+  "description": "Personal developer productivity toolkit for Chrome extension development",
+  "bin": {
+    "vit": "./bin/vit.js"
+  },
+  "main": "lib/index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincenth67/vince-dev-tools.git"
+  },
+  "keywords": [
+    "git",
+    "workflow",
+    "chrome-extension",
+    "productivity",
+    "cli"
+  ],
+  "author": "Vincent",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
