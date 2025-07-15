@@ -109,13 +109,16 @@ Initialize a new project with Git Flow branching model and version setup.
 1. Check if already in Git repository (abort if true)
 2. Execute `git init`
 3. Rename master branch to main: `git branch -m master main`
-4. Update package.json version to "0.0.0" (if file exists, warn if not)
-5. Update manifest.json version to "0.0.0" (if file exists, warn if not)
-6. Stage all files: `git add .`
-7. Create initial commit: `git commit -m "chore: initial commit"`
-8. Create develop branch: `git checkout -b develop`
-9. Prompt for remote origin setup
-10. If remote requested, add origin and push both branches
+4. **Check if Git user identity is configured**
+5. **If not configured, prompt user for name and email interactively**
+6. **Configure Git identity: `git config user.name` and `git config user.email`**
+7. Update package.json version to "0.0.0" (if file exists, warn if not)
+8. Update manifest.json version to "0.0.0" (if file exists, warn if not)
+9. Stage all files: `git add .`
+10. Create initial commit: `git commit -m "chore: initial commit"`
+11. Create develop branch: `git checkout -b develop`
+12. Prompt for remote origin setup
+13. If remote requested, add origin and push both branches
 
 #### 3.1.4 Example Output
 ```bash
@@ -124,6 +127,12 @@ $ vit init
 ✓ No existing Git repository found
 → Running: git init
 → Running: git branch -m master main
+→ Checking Git user identity...
+? Enter your name for Git commits: Vincent
+? Enter your email for Git commits: vincent@example.com
+→ Running: git config user.name "Vincent"
+→ Running: git config user.email "vincent@example.com"
+✓ Git identity configured
 → Found package.json, updating version to 0.0.0
 → Found manifest.json, updating version to 0.0.0
 → Running: git add .
@@ -139,7 +148,6 @@ $ vit init
 → Running: git push -u origin develop
 ✓ Pushed both branches to remote
 ✓ Command completed successfully
-```
 
 ### 3.2 vit newbranch
 
