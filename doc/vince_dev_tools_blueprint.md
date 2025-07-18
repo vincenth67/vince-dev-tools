@@ -652,6 +652,31 @@ git checkout develop
 vit newbranch feat/next-feature
 ```
 
+
+ # 8. New Fetures and improvement
+
+  This section is where I will write specifications for features and improvements that I didn't prepare or t about initially.
+
+## 8.1 vit init, adding -o flag  
+The vit init command requires an enhancement to support automated testing and scripting scenarios. Add an optional -o flag that accepts a GitHub repository URL as a parameter. When this flag is provided, the command should skip the interactive prompts for remote origin setup and automatically configure the specified repository as the remote origin. The behavior should be: vit init -o https://github.com/username/repo.git will initialize the Git repository, create the main/develop branches, set versions to 0.0.0, make the initial commit, and automatically add the provided URL as the remote origin without any user prompts. If the -o flag is not provided, maintain the existing interactive behavior with prompts for remote setup. This flag enables automated testing and CI/CD integration while preserving the current user experience for manual usage.
+  
+## 8.2 vit merge-main, adding -f flagz
+The vit merge-main command requires an enhancement to handle merge conflicts automatically in testing and automation scenarios. Add an optional -f (force) flag that bypasses the interactive conflict resolution prompt. When this flag is provided and merge conflicts occur during the squash merge operation, the command should automatically resolve conflicts by favoring develop's version (equivalent to answering 'y' to the current prompt). The behavior should be: vit merge-main -f will perform the merge and automatically force-resolve any conflicts using --strategy=recursive -X theirs without prompting the user. If the -f flag is not provided, maintain the existing interactive behavior with the conflict resolution prompt. This flag enables automated release processes and testing while preserving the current safety-first approach for manual usage where users can review conflicts before resolution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This blueprint provides comprehensive guidance for implementing the vince-dev-tools productivity toolkit, ensuring consistent development practices and efficient workflow automation.  
   
   IMPORTANT: As an AI, this project, vince-dev-tools will be backed up on github.com. You are not allowed to run git command yourself when building the project, unless explicitly instructed otherwise. The developer (me - Vincent) allways does that myself.
